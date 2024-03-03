@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button class="js-button">Hello</button>
+    
+
+    <script>
+        //DOM is a built in object
+        //the document object model linked to the webpage.
+
+        // document.body.innerHTML = 'changed everthing on screen';
+        // document.title = 'Good Job!';
+        console.log(document.title);
+        console.log(document.body);
+        console.log(typeof document.body);
+
+        //the DOM combines js and html together and thus js got a control over the web page.
+
+        console.log(document.body.innerHTML);
+        // //this gives all the content inside html and can change the html of the page
+        document.body.innerHTML = '<button>new</button>';
+
+        // //method is a function saved inside an object
+        console.log(document.querySelector('button'));
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = 'changed';
+
+        console.log(document.querySelector('.js-button'));
+
+
+    </script>
+</body>
+</html>

@@ -45,7 +45,7 @@ console.log(typeof b);
 console.log(typeof s);
 console.log(typeof d);
 
-//object
+//object: made the code more organised
 const student = {
 //  key: value
     fullName: "Prajwal",
@@ -60,3 +60,63 @@ console.log(student.age);
 //we can update const object's key
 student["age"]+=1;
 console.log(student.age)
+
+student.address='jalandhar';
+console.log(student);
+
+delete student.cgpa;
+console.log(student);
+
+//nested objects
+const products = {
+    name: 'shirt',
+    'delivery-time': '1 day',
+    rating: {
+        stars: 4.5,
+        count: 87
+    },
+    //function inside object = method
+    fun: function func1(){
+        console.log('function inside object');
+    }
+};
+console.log(products);
+console.log(products.name);
+console.log(products['name']);
+console.log(products['delivery-time']);
+console.log(products.rating.count);
+products.fun();
+
+console.log(typeof console);
+console.log(typeof console.log);
+
+//JSON javascript object notation-similar to javascript object but has less features
+//key value pair
+[
+{
+    "name": "shirt",
+    "delivery-time": "1 day",
+    "rating": {
+        "stars": 4.5,
+        "count": 87
+    }
+}
+]
+//built-in JSON objects
+//convert js objects in JSON
+//JSON doesn't support functions
+//type after stringify is string
+console.log(JSON.stringify(products));
+
+
+//convert JSON back into JS objects
+const jsonString = JSON.stringify(products);
+console.log(JSON.parse(jsonString));
+
+//variables are temporary, if we refresh the page then it will get deleted so we use local storage 
+//so it doesn't get deleted when we refresh the page
+localStorage.setItem('message', 'Hello');
+//to save an object inside the local storage
+localStorage.getItem('message');
+//getItem method gets a value out of local storage
+//localStorage store only string so convert the other types object into string by JSON.stringify

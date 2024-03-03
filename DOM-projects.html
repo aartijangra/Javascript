@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PROJECTS</title>
+    <style>
+        .js-button-subscribe {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 18px;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .is-subscribed { 
+            background-color: rgb(238, 237, 237);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="
+        subscribe();
+    " class="js-button-subscribe"> Subscribe </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input class="js-input" type="text" placeholder="Cost of order"
+     onkeydown="handleKeyDown(event);">
+    <button onclick=" amazon();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <script>
+
+        //document object represnts the web page window object represents the browser
+        //we dont need to add window. js automaticallu adds it 
+        // window.document
+        // window.console
+        // window.alert
+        //all of these are window objects this is how the objects work 
+
+        function subscribe() {
+            const btnElement = document.querySelector('.js-button-subscribe');
+
+            if (btnElement.innerText === 'Subscribe') {
+                btnElement.innerText = 'Subscribed';
+                btnElement.classList.add('is-subscribed');
+                //classlist is a object and add is a property of it to add class when we clicked on the button
+            }
+            else {
+                btnElement.innerText = 'Subscribe';
+                btnElement.classList.remove('is-subscribed');
+            }
+
+
+        }
+
+        function amazon(){
+            const inputElement = document.querySelector('.js-input');
+            let cost = Number(inputElement.value);
+
+            if(cost < 40){
+                cost = cost + 10;
+            }
+            document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        }
+
+        function handleKeyDown(event){
+            console.log(event.key);
+            if(event.key === 'Enter'){
+                 amazon();
+            }
+        }
+    </script>
+</body>
+
+</html>
