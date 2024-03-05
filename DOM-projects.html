@@ -19,6 +19,17 @@
             background-color: rgb(238, 237, 237);
             color: black;
         }
+        .js-calculate{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 11px;
+
+        }
+        .js-input{
+            padding: 9px;
+        }
+
     </style>
 </head>
 
@@ -31,8 +42,9 @@
     <p>Amazon Shipping Calculator</p>
     <input class="js-input" type="text" placeholder="Cost of order"
      onkeydown="handleKeyDown(event);">
+
     <button onclick=" amazon();
-    ">Calculate</button>
+    " class="js-calculate">Calculate</button>
     <p class="js-total-cost"></p>
 
     <script>
